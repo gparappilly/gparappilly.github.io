@@ -1,321 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="pictures/untitled.ico">
+  <head>
 
-  <!--fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Geordie Parappilly</title>
+    <title>Geordie Parappilly</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  </head>
 
-  <!-- Custom styles for this template -->
-  <link href="carousel.css" rel="stylesheet">
+  <body id="page-top">
 
-  <!-- Custom CSS scrolling-->
-  <link href="css/scrolling-nav.css" rel="stylesheet">
-
-
-</head>
-<!-- NAVBAR
-================================================== -->
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Geordie Parappilly</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="pictures/squareportrait.jpeg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand page-scroll" href="#page-top" style="font-size: 1.5em; color: #00008B;font-family: 'Courgette', cursive;">Geordie Parappilly</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-          <li class="hidden">
-            <a class="page-scroll" href="#page-top"></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
-
-          <li><a style="color: #00008B;" class="page-scroll" href="#projects">Projects</a></li>
-          <li><a style="color: #00008B;" class="page-scroll" href="#technical">Technical</a></li>
-          <!--<li><a class="page-scroll" href="#contact">Contact</a></li>-->
-          <li class="dropdown">
-            <a href="#" style="color: #00008B;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="blog.html">Gallery</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
 
+    <div class="container-fluid p-0">
 
-
-
-  <!-- Carousel
-    ================================================== -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img class="first-slide" src="pictures/ubc.jpg" alt="First slide" style="width: 100%; height: auto;">
-        <div class="container">
-          <div class="carousel-caption">
-            <img class="img-circle" src="pictures/geordie.jpg"  width="250" height="250">
-            <h1>Student.</h1>
-            <p> Currently, I'm a third-year student at the University of British Columbia. I'm working towards a BSc. degree
-              in Computer Science. I intend on graduating in 2018.</p>
-            <br>
-            <p>
-              <a href="https://ca.linkedin.com/pub/geordie-parappilly/66/46/41">
-
-                <img src="pictures/linkedin.png" width="auto" height="40" border="0" style="border: 4px solid #00008B;" alt="View Geordie Parappilly's profile on LinkedIn">
-
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Parappilly
+            <span class="text-primary">Geordie</span>
+          </h1>
+          <div class="subheading mb-5">
+            <a href="mailto:geordieparappilly@alumni.ubc.ca">geordieparappilly@alumni.ubc.ca</a>
+          </div>
+          <p class="mb-5">UBC Computer Science</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/geordie-parappilly-04104666">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img class="second-slide" src="pictures/programming.jpg" alt="Second slide" style="width: auto; height: auto;">
-        <div class="container">
-          <div class="carousel-caption">
-            <img class="img-circle" src="pictures/geordie1.jpg"  width="250" height="250">
-            <h1>Developer</h1>
-            <p>As a major in Computer Science, I love to solve problems through code. I enjoy the many challenges and obstacles
-              that come with programming.
-            </p>
-            <br>
-            <p>
-              <a href="https://github.com/gparappilly" role="button">
-                <img src="pictures/GitHub_Logo.png" width="auto" height="40" style="border: 4px solid #00008B;">
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/gparappilly">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
-            </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Experience</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Technical Consultant</h3>
+              <div class="subheading mb-3">Cayenta</div>
+              <p> - Implementing, troubleshooting, and providing application and database support for customers
+                <br> - Writing batch and plsql scripts
+                <br> - Oracle and SQL Server database administration
+                <br> - Apache Tomcat
+                <br> 
+                </p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2017 - Present</span>
+            </div>
           </div>
+
         </div>
-      </div>
-      <div class="item">
-        <img class="third-slide" src="pictures/blackmamba.jpg" alt="Third slide" style="width: auto; height: auto;">
-        <div class="container">
-          <div class="carousel-caption">
-            <img class="img-circle" src="pictures/snowboard.jpg"  width="250" height="250">
-            <h1>Sports Fanatic.</h1>
-            <p>I enjoy sports. Period. Whether it be kicking a ball on the field, playing fantasy basketball or even staying
-              up late night to watch cricket, I gain a real sense of enjoyment from all types of competition. If you ever
-              need someone to join your fantasy pool or your rec-team, don't hesitate to contact me. (Note: I might take
-              your money in fantasy).
-            </p>
-            <br>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of British Columbia</h3>
+              <div class="subheading mb-3">Bachelor of Science</div>
+              Computer Science
+                  <ul>
+                      <li>CPSC 304 Introduction to Relational Databases</li>
+                      <li>CPSC 310 Introduction to Software Engineering</li>
+                      <li>CPSC 311 Definition of Programming Languages</li>
+                      <li>CPSC 312 Functional and Logic Programming</li>
+                      <li>CPSC 313 Computer Hardware and Operating Systems</li>
+                      <li>CPSC 317 Internet Computing</li>
+                      <li>CPSC 320 Intermediate Algorithm Design and Analysis</li>
+                    </ul>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2013 - Present</span>
+            </div>
           </div>
+
         </div>
-      </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <!-- /.carousel -->
+      </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+          <h2 class="mb-5">Skills</h2>
 
-  <!-- Marketing messaging and featurettes
-    ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-  <div class="container marketing">
-
-    <section id="projects" class="projects-section">
-      <h1 style="font-family: 'Courgette';">Some past projects that I have worked on... </h1>
-      <br><br>
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-          <a href="http://comiccollab.heroku.com/"><img class="img-circle" src="pictures/comiccollab.jpg" width="140" height="140"></a>
-          <h2>Comic Collab</h2>
-          <p>A comic book web application built with NodeJS.</p>
-          <p><a class="btn btn-default" href="https://github.com/gparappilly/Comic-Collab" role="button">View details &raquo;</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-md-4">
-          <img class="img-circle" src="pictures/ezekiel.jpg" width="140" height="140">
-          <h2>Ezekiel</h2>
-          <p>A chatbot based off Eliza written in Prolog.</p>
-          <p><a class="btn btn-default" href="https://github.com/gparappilly/ezekiel" role="button">View details &raquo;</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-md-4">
-          <a href="http://cpsc304.herokuapp.com/"><img class="img-circle" src="pictures/cpsc304.jpg" width="140" height="140"></a>
-          <h2>Get REC-ed</h2>
-          <p>A database project modelling a simplified UBC recreational system with SQL and NodeJS. </p>
-          <p><a class="btn btn-default" href="https://github.com/gparappilly/CPSC304Project" role="button">View details &raquo;</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-      </div>
-
-      <!-- second row -->
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-          <img class="img-circle" src="pictures/restaurantquiz.jpg" width="140" height="140">
-          <h2>Restaurant Quiz</h2>
-          <p>An android game written in Java using Google Maps and Yelp APIs</p>
-          <p><a class="btn btn-default" href="https://github.com/gparappilly/RestaurantQuiz" role="button">View details &raquo;</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-md-4">
-          <a href="#"><img class="img-circle" src="pictures/squareportrait.jpeg" width="140" height="140"></a>
-          <h2>This Website</h2>
-          <p>lol</p>
-          <p><a class="btn btn-default" href="https://github.com/gparappilly/gparappilly.github.io" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- START THE FEATURETTES -->
-    <section id="technical" class="technical-section">
-      <hr class="featurette-divider">
-
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 style="font-size: 3em;">Technical Skills</h2>
-          <div class="col-md-4" <ul style="font-size: 1.2em;">
-            <li>Java</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>Python</li>
-            <li>Racket</li>
-            <li>Prolog</li>
-            </ul>
-          </div>
-          <div class="col-md-4" <ul style="font-size: 1.2em;">
-            <li>SQL/MySQL</li>
-            <li>NoSQL (MongoDB)</li>
-            <li>HTML/CSS</li>
-            <li>Javascript</li>
-            <li>Matlab</li>
-            <li>Haskell</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <img src="pictures/vadamvali.jpg" style="max-width:95%; box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 style="font-size: 3em;">Upper-Level Courses Taken</h2>
-
-          <ul style="font-size: 1.2em;">
-            <li>CPSC 304 Introduction to Relational Databases</li>
-            <li>CPSC 310 Introduction to Software Engineering</li>
-            <li>CPSC 311 Definition of Programming Languages</li>
-            <li>CPSC 312 Functional and Logic Programming</li>
-            <li>CPSC 313 Computer Hardware and Operating Systems</li>
-            <li>CPSC 317 Internet Computing</li>
-            <li>CPSC 320 Intermediate Algorithm Design and Analysis</li>
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicons devicons-windows"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-git"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-ubuntu"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-visualstudio"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-intellij"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-javascript"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-java"></i>
+              </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-python"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-nodejs"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-prolog"></i>
+              </li>
+              <li class="list-inline-item">
+                  <i class="devicons devicons-msql_server"></i>
+                </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-mysql"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-mongodb"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-jira"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-heroku"></i>
+            </li>
+            <li class="list-inline-item">
+                <i class="devicons devicons-html5"></i>
+              </li>
+              <li class="list-inline-item">
+                  <i class="devicons devicons-css3"></i>
+                </li>
           </ul>
 
+          <div class="subheading mb-3">Workflow</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Functional Teams</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Agile Development &amp; Scrum</li>
+          </ul>
         </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img src="pictures/boatcruise.jpg" style="max-width:95%; box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);">
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+          <div class="my-auto">
+            <h2 class="mb-5">Projects</h2>
+            <div class="row">
+                <div class="col-lg-4" align="center">
+                  <a href="http://comiccollab.heroku.com/"><img class="rounded-circle" src="pictures/comiccollab.jpg" width="140" height="140"></a>
+                  <h3>Comic Collab</h3>
+                  <p>A comic book web application built with NodeJS.</p>
+                  <p><a class="btn btn-default" href="https://github.com/gparappilly/Comic-Collab" role="button">View details &raquo;</a></p>
+                </div>
+
+                <div class="col-lg-4" align="center">
+                  <img class="rounded-circle" src="pictures/ezekiel.jpg" width="140" height="140">
+                  <h3>Ezekiel</h3>
+                  <p>A chatbot based off Eliza written in Prolog.</p>
+                  <p><a class="btn btn-default" href="https://github.com/gparappilly/ezekiel" role="button">View details &raquo;</a></p>
+                </div>
+
+                <div class="col-lg-4" align="center">
+                  <a href="http://cpsc304.herokuapp.com/"><img class="rounded-circle" src="pictures/cpsc304.jpg" width="140" height="140"></a>
+                  <h3>Get REC-ed</h3>
+                  <p>A database project modelling a simplified UBC recreational system with SQL and NodeJS. </p>
+                  <p><a class="btn btn-default" href="https://github.com/gparappilly/CPSC304Project" role="button">View details &raquo;</a></p>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-lg-4" align="center">
+                    <img class="rounded-circle" src="pictures/restaurantquiz.jpg" width="140" height="140">
+                    <h3>Restaurant Quiz</h3>
+                    <p>An android game written in Java using Google Maps and Yelp APIs</p>
+                    <p><a class="btn btn-default" href="https://github.com/gparappilly/RestaurantQuiz" role="button">View details &raquo;</a></p>
+                  </div>
+                  <!-- /.col-lg-4 -->
+                  <div class="col-lg-4" align="center">
+                    <a href="#"><img class="rounded-circle" src="pictures/squareportrait.jpeg" width="140" height="140"></a>
+                    <h3>This Website</h3>
+                    <p>lol</p>
+                    <p><a class="btn btn-default" href="https://github.com/gparappilly/gparappilly.github.io" role="button">View details &raquo;</a></p>
+                  </div>
+                </div>
+
+
+          </div>
+        </section>
+      
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+          <h2 class="mb-5">Interests</h2>
+          <p>Away from the office, I enjoy most of my time being outdoors. Sports are a passion. Whether it be on the field, or in the gym, or even in fantasy, I am always looking to compete. Soccer, basketball, and football are my main joys, but I'm always down to play or watch anything competitive with friends.</p>
+          <p class="mb-0">When forced indoors, I enjoy a number of movies and tv shows, primarily stuff relating to the DC and Marvel universe, as well as the occasional bollywood flick. Additionally, I like to read and stay up to date with international and local news. I am an aspiring chef, although not very good yet. Technology will always be a passion of mine — I try to keep up to date reading about technological advancements as well as trying my hand at new languages and tools.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
 
-    <hr class="featurette-divider">
+    </div>
 
-    <!--
-    <section id="contact">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 style="font-size: 3.5em;">Contact <span class="text-muted"></span></h2>
-          <p class="lead">geordie.p@hotmail.com</p>
-          <p class="lead">(778) 388-9598</p>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        </div>
-        <div class="col-md-5">
-          <img src="pictures/views.jpg" width="400">
-        </div>
-      </div>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      <hr class="featurette-divider">
-    </section>
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
 
--->
-    <!-- /END THE FEATURETTES -->
-
-
-    <!-- FOOTER -->
-    <footer>
-      <p><img src="pictures/email.png" width="40" style="float: left;margin: 0 0 10px 10px;"><b>&nbsp Contact</b><br />
-        &nbsp&nbsp<a href="mailto:geordieparappilly@alumni.ubc.com">geordieparappilly@alumni.ubc.com</a></p>
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-    </footer>
-
-  </div>
-  <!-- /.container -->
-
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-  <script src="js/holder.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-  <!-- Scrolling Nav JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/scrolling-nav.js"></script>
-
-</body>
+  </body>
 
 </html>
