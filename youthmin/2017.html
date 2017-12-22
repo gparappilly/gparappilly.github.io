@@ -2,344 +2,287 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="../pictures/untitled.ico">
 
-  <!--fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
-
-  <title>Youth Min</title>
+  <title>St. Alphonsa Youth Ministry 2018</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="../device-mockups/device-mockups.min.css">
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-  <!-- Custom CSS scrolling-->
-  <link href="../css/scrolling-nav.css" rel="stylesheet">
-
-  <script type="text/javascript">
-// <![CDATA[
-var sparks=75; // how many sparks per clicksplosion
-var speed=33; // how fast - smaller is faster
-var bangs=5; // how many can be launched simultaneously (note that using too many can slow the script down)
-var colours=new Array('#03f', '#f03', '#0e0', '#93f', '#0cf', '#f93', '#f0c'); 
-//                     blue    red     green   purple  cyan    orange  pink
-
-/****************************
-*   Clicksplosion Effect    *
-*(c)2012-3 mf2fm web-design *
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
-var intensity=new Array();
-var Xpos=new Array();
-var Ypos=new Array();
-var dX=new Array();
-var dY=new Array();
-var stars=new Array();
-var decay=new Array();
-var timers=new Array();
-var swide=800;
-var shigh=600;
-var sleft=sdown=0;
-var count=0;
-
-function addLoadEvent(funky) {
-  var oldonload=window.onload;
-  if (typeof(oldonload)!='function') window.onload=funky;
-  else window.onload=function() {
-    if (oldonload) oldonload();
-    funky();
-  }
-}
-
-addLoadEvent(clicksplode);
-
-function clicksplode() { if (document.getElementById) {
-  var i, j;
-  window.onscroll=set_scroll;
-  window.onresize=set_width;
-  document.onclick=eksplode;
-  set_width();
-  set_scroll();
-  for (i=0; i<bangs; i++) for (j=sparks*i; j<sparks+sparks*i; j++) {
-    stars[j]=createDiv('*', 13);
-    document.body.appendChild(stars[j]);
-  }
-}}
-
-function createDiv(char, size) {
-  var div, sty;
-  div=document.createElement('div');
-  sty=div.style;
-  sty.font=size+'px monospace';
-  sty.position='absolute';
-  sty.backgroundColor='transparent';
-  sty.visibility='hidden';
-  sty.zIndex='101';
-  div.appendChild(document.createTextNode(char));
-  return (div);
-}
-
-function bang(N) {
-  var i, Z, A=0;
-  for (i=sparks*N; i<sparks*(N+1); i++) { 
-    if (decay[i]) {
-      Z=stars[i].style;
-      Xpos[i]+=dX[i];
-      Ypos[i]+=(dY[i]+=1.25/intensity[N]);
-      if (Xpos[i]>=swide || Xpos[i]<0 || Ypos[i]>=shigh+sdown || Ypos[i]<0) decay[i]=1;
-	  else {
-        Z.left=Xpos[i]+'px';
-        Z.top=Ypos[i]+'px';
-	  }
-      if (decay[i]==15) Z.fontSize='7px';
-      else if (decay[i]==7) Z.fontSize='2px';
-      else if (decay[i]==1) Z.visibility='hidden';
-	  decay[i]--;
-	}
-	else A++;
-  }
-  if (A!=sparks) timers[N]=setTimeout('bang('+N+')', speed);
-}
-
-function eksplode(e) { 
-  var x, y, i, M, Z, N;
-  set_scroll();
-  y=(e)?e.pageY:event.y+sdown;
-  x=(e)?e.pageX:event.x+sleft;
-  N=++count%bangs;
-  M=Math.floor(Math.random()*3*colours.length);
-  intensity[N]=5+Math.random()*4;
-  for (i=N*sparks; i<(N+1)*sparks; i++) {
-    Xpos[i]=x;
-    Ypos[i]=y-5;
-    dY[i]=(Math.random()-0.5)*intensity[N];
-    dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
-    decay[i]=16+Math.floor(Math.random()*16);
-    Z=stars[i].style;
-    if (M<colours.length) Z.color=colours[i%2?count%colours.length:M];
-    else if (M<2*colours.length) Z.color=colours[count%colours.length];
-    else Z.color=colours[i%colours.length];
-    Z.fontSize='13px';
-    Z.visibility='visible';
-  }
-  clearTimeout(timers[N]);
-  bang(N);
-} 
-
-function set_width() {
-  var sw_min=999999;
-  var sh_min=999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
-  }
-  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
-    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
-    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
-    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
-  }
-  if (sw_min==999999 || sh_min==999999) {
-    sw_min=800;
-    sh_min=600;
-  }
-  swide=sw_min-7;
-  shigh=sh_min-7;
-}
-
-function set_scroll() {
-  if (typeof(self.pageYOffset)=='number') {
-    sdown=self.pageYOffset;
-    sleft=self.pageXOffset;
-  }
-  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
-    sdown=document.body.scrollTop;
-    sleft=document.body.scrollLeft;
-  }
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-    sleft=document.documentElement.scrollLeft;
-    sdown=document.documentElement.scrollTop;
-  }
-  else {
-    sdown=0;
-    sleft=0;
-  }
-}
-// ]]>
-</script>
-
+  <!-- Custom styles for this template -->
+  <link href="../css/new-age.min.css" rel="stylesheet">
 
 </head>
-<!-- NAVBAR
-================================================== -->
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top">
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <div class="navbar-header page-scroll">
-        <!--
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">St. Alphonsa Youth Ministry</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
       </button>
-      -->
-        <a class="navbar-brand page-scroll" href="#page-top" style="font-size: 1.5em; color: #00008B;font-family: 'Courgette', cursive;">St. Alphonsa Youth Ministry</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-          <li class="hidden">
-            <a class="page-scroll" href="#page-top"></a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#schedule">Schedule</a>
           </li>
-          <li class="dropdown">
-            <a href="#" style="color: #00008B;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Archive <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="../youthmin/2017">2017</a></li>
-              <li><a href="../youthmin/2018">2018</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#theme">Theme</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#newsletters">Newsletters</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Archive</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../youthmin/2018">2018</a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <br><br><br><br>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-1 col-md-1"></div>
-      <div class="col-lg-10 col-md-10">
-        <h3>Calendar</h3>
-        <div class="table-responsive">
-          <table class="table table-striped ">
-            <thead>
-              <tr>
-                <th>Time and Date</th>
-                <th>Location</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><s>March 17 4:30pm</s></td>
-                <td><s>Saint Bernadette</s></td>
-                <td><s>Gathering - King of the Ring</s></td>
-              </tr>
-              <tr>
-                <td><s>May 21 4:30pm</s></td>
-                <td><s>Saint Bernadette</s></td>
-                <td><s>Gathering - Queen</s></td>
-              </tr>
-              <tr>
-                <td><s>June 18 4:30pm</s></td>
-                <td><s>Saint Bernadette</s></td>
-                <td><s>Gathering - I'm The One</s></td>
-              </tr>
-              <tr>
-                <td><s>July 16 4:30pm</s></td>
-                <td><s>Saint Bernadette</s></td>
-                <td><s>Priest called for a meeting</s></td>
-              </tr>
-              <tr>
-                <td><s>July 29 8:30am</s></td>
-                <td><s>Hike - Lynn Canyon Park</s></td>
-                <td><s>meet up at IC Delta at 8:30am</s></td>
-              </tr>
-              <tr>
-                <td><s>September 16 12:00pm - 5:00pm</s></td>
-                <td><s>Bear Creek Park</s></td>
-                <td><s>end of summer picnic</s></td>
-              </tr>
-            </tbody>
-          </table>
+  <header class="masthead" style="background:#005000 !important;">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-4 my-auto" align="center">
+          <img class="rounded" src="../img/communion.png" width="40%" height="auto">
+          <p></p>
+          <h3>COMMUNION</h3>
+          <p>Prioritizing authentic relationship over organization and task, but also emphasizing the mutual necessity to love
+            both God and neighbor.</p>
         </div>
-        <h3> Resources </h3>
-        <div class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFRFJUcTEwdEdfZ0E"> January 2017 Newsletter - An Invitation to Year of Youth</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFdl93SUk0cjBnNE0"> February 2017 Newsletter - Authencity with Self and Others</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFWVRmSzNUOGRTQjQ"> March 2017 Newsletter - Healing Through Mercy</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFMktXNmJtdU1kajQ"> April 2017 Newsletter - Communities of Prayer</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFbFFJcFdaa202dGc"> May 2017 Newsletter - An Introduction to Intergenerational Unity</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFVUFNQ1MzQzY1Tmc"> June 2017 Newsletter - Healing The Gap With Youthful Passion</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/file/d/0B0QYfCiyRawFZm42YUFQeHlJM1U/view?usp=sharing"> July 2017 Newsletter - Cultural vs Liturgical Phenomenon</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=0B0QYfCiyRawFdVZROUlOdjh1cUE"> August 2017 Newsletter - Witnessing, Not Winning</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=1sxvh6lsHR8PxftQ8M1MyWgdBX9AjkTO0"> September 2017 Newsletter - Witnessing, Not Winning</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=1TytIAAUwUC2J35ECPusNuSZ_0KUADdJp"> October 2017 Newsletter - Witnessing, Not Winning</a><td>
-              </tr>
-              <tr>
-                <td><a href="https://drive.google.com/open?id=1IN2UDnMNnPSdzn9DFlYKizMct7BiqZf8"> November/December 2017 Newsletter - Witnessing, Not Winning</a><td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col-lg-4 my-auto" align="center">
+          <img class="rounded" src="../img/discipleship.png" width="40%" height="auto">
+          <p></p>
+          <h3>DISCIPLESHIP</h3>
+          <p>Being disciples of Christ, which marks the difference between grasping and receiving our identity.
+            <br>
+            <br>
+          </p>
+        </div>
+        <div class="col-lg-4 my-auto" align="center">
+          <img class="rounded" src="../img/growth.png" width="40%" height="auto">
+          <p></p>
+          <h3>GROWTH</h3>
+          <p>Recognizing the universal call to holiness is a call to live life in its fullness.
+            <br>
+            <br>
+            <br>
+          </p>
         </div>
       </div>
     </div>
-    <br>
-    <img src="../pictures/youthmin.jpg" style="max-width:84%; box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5); display: block;
-    margin: 0 auto;">
-  </div>
+  </header>
 
-  <br><br>
+  <section class="download bg-primary text-center" id="schedule">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto">
+          <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>Time and Date</th>
+                  <th>Location</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <s>March 17 4:30pm</s>
+                  </td>
+                  <td>
+                    <s>Saint Bernadette</s>
+                  </td>
+                  <td>
+                    <s>Gathering - King of the Ring</s>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <s>May 21 4:30pm</s>
+                  </td>
+                  <td>
+                    <s>Saint Bernadette</s>
+                  </td>
+                  <td>
+                    <s>Gathering - Queen</s>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <s>June 18 4:30pm</s>
+                  </td>
+                  <td>
+                    <s>Saint Bernadette</s>
+                  </td>
+                  <td>
+                    <s>Gathering - I'm The One</s>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <s>July 16 4:30pm</s>
+                  </td>
+                  <td>
+                    <s>Saint Bernadette</s>
+                  </td>
+                  <td>
+                    <s>Priest called for a meeting</s>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <s>July 29 8:30am</s>
+                  </td>
+                  <td>
+                    <s>Hike - Lynn Canyon Park</s>
+                  </td>
+                  <td>
+                    <s>meet up at IC Delta at 8:30am</s>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <s>September 16 12:00pm - 5:00pm</s>
+                  </td>
+                  <td>
+                    <s>Bear Creek Park</s>
+                  </td>
+                  <td>
+                    <s>end of summer picnic</s>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="features" id="theme">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>Year Of Youth</h2>
+        <p class="text-muted">The Year of Youth is a yearlong dedication of Diocesan and parish/mission level activities, and is a call to action
+          for all the Syro Malabar faithful. The Year of Youth will begin on Sunday, January 1, 2017 and end on Sunday, December
+          31, 2017. Youth ministries in all the parishes/missions will be integrated under the Diocesan Youth Apostolate,
+          which will provide a common vision for the success and growth of our Syro Malabar Church, promoting unity, and
+          reviving parish life.</p>
+        <hr>
+      </div>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-  <script src="../js/bootstrap.min.js"></script>
-  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-  <script src="../js/holder.min.js"></script>
+      <div class="row">
+        <img src="../pictures/youthmin.jpg" style="max-width:84%; box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5); display: block;
+          margin: 0 auto;">
+      </div>
+    </div>
+  </section>
 
-  <!-- jQuery -->
-  <script src="../js/jquery.js"></script>
-  <!-- Scrolling Nav JavaScript -->
-  <script src="../js/jquery.easing.min.js"></script>
-  <script src="../js/scrolling-nav.js"></script>
+  <section class="download bg-primary" id="newsletters" style="background:#005000 !important;">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFRFJUcTEwdEdfZ0E"> January 2017 Newsletter - An Invitation to Year of Youth</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFdl93SUk0cjBnNE0"> February 2017 Newsletter - Authencity with Self and Others</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFWVRmSzNUOGRTQjQ"> March 2017 Newsletter - Healing Through Mercy</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFMktXNmJtdU1kajQ"> April 2017 Newsletter - Communities of Prayer</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFbFFJcFdaa202dGc"> May 2017 Newsletter - An Introduction to Intergenerational Unity</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFVUFNQ1MzQzY1Tmc"> June 2017 Newsletter - Healing The Gap With Youthful Passion</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/file/d/0B0QYfCiyRawFZm42YUFQeHlJM1U/view?usp=sharing"> July 2017 Newsletter - Cultural vs Liturgical Phenomenon</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=0B0QYfCiyRawFdVZROUlOdjh1cUE"> August 2017 Newsletter - Witnessing, Not Winning</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=1sxvh6lsHR8PxftQ8M1MyWgdBX9AjkTO0"> September 2017 Newsletter - Beyond Ourselves</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=1TytIAAUwUC2J35ECPusNuSZ_0KUADdJp"> October 2017 Newsletter - Difference in Traditions</a>
+                <td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://drive.google.com/open?id=1IN2UDnMNnPSdzn9DFlYKizMct7BiqZf8"> November/December 2017 Newsletter - The Content of Missionary Discipleship</a>
+                <td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>St. Alphonsa Syro-Malabar Parish</p>
+      <p>6543 132 St, Surrey, BC V3W 4L4</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/new-age.min.js"></script>
 
 </body>
 
