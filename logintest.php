@@ -9,7 +9,7 @@
 <body>
 
     <?php
-
+    //    http://html.net/tutorials/php/lesson12.php
 	// Check if username and password are correct
 	if ($_POST["username"] == "php" && $_POST["password"] == "php") {
 	 
